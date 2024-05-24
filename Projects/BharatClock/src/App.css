@@ -1,0 +1,17 @@
+.appTitle {
+  margin: 3rem;
+  margin-top: 4rem;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+.appPromo {
+  margin: 1.5rem;
+  padding: 1rem;
+}
+
+.appClock {
+  margin: 3rem;
+  padding: 2rem;
+  font-weight: 900;
+}
