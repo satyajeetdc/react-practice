@@ -16,7 +16,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <h1>Healthy Food</h1>
+      <h1 className="heading">Healthy Food</h1>
       <ErrorMessage items={healthyFoodList} errMsg={errorMessage} />
       <FoodItems items={healthyFoodList} />
     </React.Fragment>

@@ -1,9 +1,12 @@
 import React from "react";
+import styles from "./Item.module.css";
 
 const Item = ({ foodItem }) => {
   return (
     <>
-      <li className="list-group-item">{foodItem}</li>
+      <li className={`${styles.foodItems} list-group-item`}>
+        <span className={`${styles.customSpan}`}>{foodItem}</span>
+      </li>
     </>
   );
 };
