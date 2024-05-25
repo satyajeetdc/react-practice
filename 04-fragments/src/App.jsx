@@ -1,6 +1,6 @@
-import React from "react";
 import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
+import Container from "./components/Container";
 
 function App() {
   let healthyFoodList = [
@@ -15,11 +15,11 @@ function App() {
   const errorMessage = "The list is empty";
 
   return (
-    <React.Fragment>
+    <Container>
       <h1 className="heading">Healthy Food</h1>
       <ErrorMessage items={healthyFoodList} errMsg={errorMessage} />
       <FoodItems items={healthyFoodList} />
-    </React.Fragment>
+    </Container>
   );
 }
 
