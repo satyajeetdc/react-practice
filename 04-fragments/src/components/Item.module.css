@@ -5,3 +5,7 @@
 .customSpan {
   font-weight: 500;
 }
+
+.button {
+  float: right;
+}
