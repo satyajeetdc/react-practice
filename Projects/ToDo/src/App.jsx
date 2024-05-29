@@ -7,26 +7,17 @@ import { useState } from "react";
 import WelcomeMsg from "./components/WelcomeMsg";
 
 const App = () => {
-  const initialTodoItems = [
-    // {
-    //   name: "Buy Milk",
-    //   dueDate: "2024-05-18",
-    // },
-    // {
-    //   name: "Buy Oats",
-    //   dueDate: "2024-05-19",
-    // },
-  ];
+  const initialTodoItems = [];
 
   const [todoItems, setTodoItems] = useState(initialTodoItems);
 
   const handleNewItem = (itemName, itemDueDate) => {
     // console.log(`New Item Added : ${itemName} , Date: ${itemDueDate}`);
-    const newTodoItems = [
-      ...todoItems,
+
+    setTodoItems((currVal) => [
+      ...currVal,
       { name: itemName, dueDate: itemDueDate },
-    ];
-    setTodoItems(newTodoItems);
+    ]);
   };
 
   const handleDeleteItem = (todoItemName) => {
