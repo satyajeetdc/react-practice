@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoBagAdd } from "react-icons/io5";
 
 function AddTodo({ onNewItem }) {
   const [todoName, setTodoName] = useState("");
@@ -12,7 +13,9 @@ function AddTodo({ onNewItem }) {
     setDueDate(e.target.value);
   };
 
-  const handleAddNewButton = () => {
+  const handleAddNewButton = (event) => {
+    event.preventDefault();
+    console.log(event);
     onNewItem(todoName, dueDate);
     setTodoName("");
     setDueDate("");
@@ -21,7 +24,7 @@ function AddTodo({ onNewItem }) {
   return (
     <>
       <div className="container">
-        <div className="row custom-row">
+        <form className="row custom-row" onSubmit={handleAddNewButton}>
           <div className="col-6">
             <input
               type="text"
@@ -34,15 +37,11 @@ function AddTodo({ onNewItem }) {
             <input type="date" value={dueDate} onChange={handleDateChange} />
           </div>
           <div className="col-2" style={{ display: "flex" }}>
-            <button
-              type="button"
-              className="btn btn-success custom-button"
-              onClick={handleAddNewButton}
-            >
-              Add
+            <button className="btn btn-success custom-button">
+              <IoBagAdd style={{ fontSize: "20px", lineHeight: "5px" }} />
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );

@@ -1,3 +1,5 @@
+import { AiTwotoneDelete } from "react-icons/ai";
+
 function TodoItem1({ todoName, todoDate, onDeleteClick }) {
   return (
     <div className="container">
@@ -10,7 +12,7 @@ function TodoItem1({ todoName, todoDate, onDeleteClick }) {
             className="btn btn-danger custom-button"
             onClick={() => onDeleteClick(todoName)}
           >
-            Delete
+            <AiTwotoneDelete style={{ fontSize: "20px", lineHeight: "5px" }} />
           </button>
         </div>
       </div>
