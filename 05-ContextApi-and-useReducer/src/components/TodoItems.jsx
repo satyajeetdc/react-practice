@@ -9,7 +9,11 @@ const TodoItems = () => {
   return (
     <div className={styles.itemsContainer}>
       {todoItems.map((item) => (
-        <TodoItem todoDate={item.dueDate} todoName={item.name}></TodoItem>
+        <TodoItem
+          todoDate={item.dueDate}
+          todoName={item.name}
+          key={item.name}
+        ></TodoItem>
       ))}
     </div>
   );
