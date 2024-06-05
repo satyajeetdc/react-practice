@@ -1,4 +1,4 @@
-import { createContext, useCallback, useReducer } from "react";
+import { createContext, useCallback, useMemo, useReducer } from "react";
 
 const DEFAULT_CONTEXT = {
   postList: [],
@@ -73,6 +73,9 @@ const PostListProvider = ({ children }) => {
     },
     [dispatchPostList]
   );
+
+  // let arr = [3, 5, 2, 10, 1];
+  // let sortedArr = useMemo(() => arr.sort(), [arr]);
 
   return (
     <PostList.Provider
