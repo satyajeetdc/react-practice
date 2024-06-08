@@ -1,18 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import App from "./routes/App.jsx";
 import "./index.css";
+import Bag from "./routes/Bag.jsx";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./routes/Home.jsx";
+import myntraStore from "./store/index.js";
+import { Provider } from "react-redux";
+import "bootstrap/dist/css/bootstrap.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <PostList />, loader: postLoader },
+      { path: "/", element: <Home /> },
       {
-        path: "/create-post",
-        element: <CreatePost />,
-        action: createPostAction,
+        path: "/bag",
+        element: <Bag />,
+        /*action: createPostAction, */
       },
     ],
   },
@@ -20,8 +26,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
+    <Provider store={myntraStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
